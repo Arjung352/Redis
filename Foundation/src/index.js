@@ -22,12 +22,11 @@ app.listen(3000, () => {
     if (mongoose.connection.readyState === 0) {
       mongoose.connect(url);
     }
-    res.json({
-      message: `MongoDB is running on port ${mongoose.connection.name}`,
+    console.log({
+      message: `MongoDB is connected to database: ${mongoose.connection.name}`,
     });
+    console.log(mongoose.connection.name);
   } catch (error) {
-    res
-      .status(500)
-      .json({ error: `Error connecting to MongoDB: ${error.message}` });
+    console.log({ error: `Error connecting to MongoDB: ${error.message}` });
   }
 });
