@@ -1,8 +1,13 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const Redis = require("ioredis");
-
+const bannerRoutes = require("./route/banner");
 const app = express();
+
+// middleware
+app.use(express.json());
+app.use("/api", bannerRoutes);
+
 const redis = new Redis(process.env.REDIS_URL || "redis://localhost:6379");
 
 app.get("/redis", async (req, res) => {
