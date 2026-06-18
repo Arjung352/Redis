@@ -2,7 +2,7 @@
   "name": "redis-foundation",
   "version": "1.0.0",
   "description": "Redis Foundation project",
-  "main": "src/index.js",
+  "main": "src/api.js",
   "scripts": {
     "api": "node src/api.js",
     "worker": "node src/worker.js"
